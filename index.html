@@ -4,37 +4,85 @@
 <meta charset="UTF-8">
 <title>今園草堂｜荒地十六年．生根記</title>
 <style>
-/* 新增圖標容器樣式 */
-.c-icon-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0 10px 0; /* 調整上下間距 */
-  height: 45px; /* 固定高度避免排版跑位 */
-}
-.c-icon-wrap svg {
-  height: 100%;
-  width: auto;
-}
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@300;400&display=swap');
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+/* ... 保留原本的字體匯入與基礎設定 ... */
 
 body {
   background: #bdb8ae;
   font-family: 'Noto Serif TC', 'PingFang TC', serif;
-  padding: 24px 16px 40px;
+  padding: 20px 10px; /* 減少邊距，適合行動裝置 */
 }
 
-.hint {
-  text-align: center;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size: 11px;
-  letter-spacing: .28em;
-  color: #88807a;
-  margin-bottom: 16px;
+/* ── 修改 PAGE 容器：取消 A4 限制，改為響應式寬度 ── */
+.page {
+  width: 95%;
+  max-width: 1400px; /* 最大寬度限制，避免大螢幕太散 */
+  margin: 0 auto;
+  background: #f3ede2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 至少佔滿一屏 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 增加一點陰影質感 */
 }
 
+/* ── 修改 HEADER：在窄螢幕下改為垂直排列 ── */
+.hd {
+  padding: 40px 5% 30px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .hd {
+    grid-template-columns: 1fr; /* 手機版標題居中疊放 */
+    text-align: center;
+  }
+  .hd-right { align-items: center; text-align: center; }
+  .hd-left { order: 2; }
+  .hd-center { order: 1; }
+  .hd-right { order: 3; }
+}
+
+/* ── 修改 TIMELINE：使其可以橫向滾動或隱藏（若內容太多） ── */
+.tl {
+  padding: 20px 5%;
+  overflow-x: auto; /* 讓時間軸在小螢幕可以左右滑動 */
+  white-space: nowrap;
+}
+
+/* ── 修改 CARDS：核心變動 ── */
+.cards {
+  flex: 1;
+  display: grid;
+  /* 使用 auto-fit：寬度足夠時排 4 欄，不足時自動折行 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 0;
+  border-top: 0.5px solid rgba(42,35,24,.1);
+}
+
+.card {
+  padding: 40px 30px;
+  border-right: 0.5px solid rgba(42,35,24,.12);
+  border-bottom: 0.5px solid rgba(42,35,24,.12); /* 增加底線，換行時才有區隔 */
+}
+
+/* 針對行動裝置的細節微調 */
+@media (max-width: 600px) {
+  .card {
+    border-right: none;
+  }
+  .hd-main { font-size: 36px; }
+  .c-era { font-size: 24px; }
+}
+
+/* ── 移除原本 A4 列印限制的強制寬度 ── */
+@media print {
+  .page { width: 100%; box-shadow: none; }
+}
+
+/* ... 保留其餘動畫、SVG 與文字樣式 ... */
+</style>
 /* ── PAGE: landscape A4 297×210mm ── */
 .page {
   width: 1123px;
