@@ -2,313 +2,313 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>今園草堂｜荒地十六年．生根記</title>
+<title>今園草堂｜十六年生根記</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500&family=Noto+Sans+TC:wght@300;400&display=swap');
+
+:root {
+  --ink:      #1e1a12;
+  --ink-70:   rgba(30,26,18,0.72);
+  --ink-50:   rgba(30,26,18,0.52);
+  --ink-30:   rgba(30,26,18,0.30);
+  --ink-12:   rgba(30,26,18,0.12);
+  --paper:    #f3ede0;
+  --warm:     #e9e1d0;
+  --sage:     #5a7c50;
+  --sage-l:   #8ab07e;
+  --rust:     #9b3d1e;
+  --rust-l:   #c96444;
+  --gold:     #9a7010;
+  --gold-l:   #c8a035;
+  --charcoal: #3a3028;
+  --char-l:   #6a5e4e;
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── PAGE: A3 landscape ── */
+html, body { width: 100%; background: #bdb6a8; }
+
 body {
-  background: #bdb8ae;
   font-family: 'Noto Serif TC', 'PingFang TC', serif;
-  padding: 24px 16px 40px;
+  color: var(--ink);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .hint {
-  text-align: center;
   font-family: 'Noto Sans TC', sans-serif;
-  font-size: 11px;
-  letter-spacing: .28em;
-  color: #88807a;
-  margin-bottom: 16px;
+  font-size: 11px; letter-spacing: .22em;
+  color: #8a8278; text-align: center;
 }
 
-/* ── PAGE: landscape A4 297×210mm ── */
 .page {
-  width: 1123px;
-  min-height: 794px;
-  margin: 0 auto;
-  background: #f3ede2;
-  display: flex;
-  flex-direction: column;
+  width: 1122px; /* A3 landscape ~297mm at 96dpi */
+  background: var(--paper);
+  position: relative;
   overflow: hidden;
+  box-shadow: 0 6px 40px rgba(0,0,0,.22);
 }
 
-/* ── HEADER ── */
+/* ════════════════════════════════
+   HEADER
+════════════════════════════════ */
 .hd {
-  padding: 32px 56px 24px;
-  border-bottom: 0.5px solid rgba(42,35,24,.15);
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 100px 1fr 100px;
   align-items: center;
+  padding: 28px 52px 20px;
+  border-bottom: .5px solid var(--ink-30);
   position: relative;
+  gap: 16px;
 }
 .hd::after {
   content: '';
-  position: absolute;
-  bottom: -1px; left: 56px; right: 56px;
-  height: 0.5px;
-  background: linear-gradient(to right, transparent, rgba(122,48,24,.28), transparent);
-}
-.hd-left {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.hd-en {
-  font-size: 9px;
-  letter-spacing: .55em;
-  color: rgba(42,35,24,.3);
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight: 300;
-}
-.hd-sub {
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: .28em;
-  color: rgba(42,35,24,.5);
-}
-.hd-center {
-  text-align: center;
-}
-.hd-main {
-  font-size: 46px;
-  font-weight: 200;
-  letter-spacing: .44em;
-  color: #2a2318;
-  display: block;
-  line-height: 1;
-}
-.hd-right {
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-}
-.hd-num {
-  font-size: 46px;
-  font-weight: 200;
-  color: #2a2318;
-  line-height: 1;
-  display: block;
-}
-.hd-yl {
-  font-size: 8.5px;
-  letter-spacing: .55em;
-  color: rgba(42,35,24,.28);
-  font-family: 'Noto Sans TC', sans-serif;
-  display: block;
-}
-.hd-yr {
-  font-size: 11px;
-  letter-spacing: .2em;
-  color: rgba(42,35,24,.45);
-  font-weight: 300;
-  display: block;
-  margin-top: 4px;
+  position: absolute; bottom: -2px; left: 52px; right: 52px;
+  height: .5px;
+  background: linear-gradient(to right, transparent, rgba(155,61,30,.35), transparent);
 }
 
-/* ── TIMELINE ── */
-.tl {
-  padding: 16px 56px;
-  display: flex;
-  align-items: center;
-  border-bottom: 0.5px solid rgba(42,35,24,.1);
+/* Logo box using uploaded image */
+.logo-box {
+  width: 76px; height: 76px;
+  border: 1.5px solid var(--rust);
+  overflow: hidden;
+  flex-shrink: 0;
 }
-.tl-seg { flex: 1; height: 0.5px; background: rgba(42,35,24,.22); }
+.logo-box img { width: 100%; height: 100%; object-fit: cover; object-position: 20% 35%; }
+
+.hd-c { text-align: center; }
+.hd-main {
+  font-size: 42px; font-weight: 200;
+  letter-spacing: .45em; color: var(--ink);
+  display: block; line-height: 1; margin-bottom: 8px;
+}
+.hd-sub {
+  font-size: 13px; font-weight: 300;
+  letter-spacing: .3em; color: var(--ink-70);
+  display: block; margin-bottom: 4px;
+}
+.hd-en {
+  font-size: 9px; letter-spacing: .5em;
+  color: var(--ink-50);
+  font-family: 'Noto Sans TC', sans-serif; font-weight: 300;
+}
+.hd-r { text-align: right; }
+.hd-num {
+  font-size: 48px; font-weight: 200;
+  color: var(--ink); display: block; line-height: 1;
+}
+.hd-yl {
+  font-size: 8px; letter-spacing: .55em;
+  color: var(--ink-50);
+  font-family: 'Noto Sans TC', sans-serif;
+  display: block; margin-top: 2px;
+}
+.hd-yr {
+  font-size: 10px; letter-spacing: .22em;
+  color: var(--ink-70); display: block;
+  margin-top: 6px; font-weight: 300;
+}
+
+/* ════════════════════════════════
+   TIMELINE
+════════════════════════════════ */
+.tl {
+  padding: 14px 52px;
+  display: flex; align-items: center;
+  border-bottom: .5px solid var(--ink-12);
+}
+.tl-seg { flex: 1; height: .5px; background: var(--ink-30); }
 .tl-n { display: flex; flex-direction: column; align-items: center; }
 .tl-d {
   width: 7px; height: 7px; border-radius: 50%;
-  border: 1px solid rgba(42,35,24,.28);
-  background: #f3ede2;
-  z-index: 1;
+  border: 1px solid var(--ink-50); background: var(--paper);
+  position: relative; z-index: 1;
 }
-.tl-d.big { width: 11px; height: 11px; background: #8b3a1f; border-color: #8b3a1f; }
+.tl-d.big { width: 11px; height: 11px; background: var(--rust); border-color: var(--rust); }
 .tl-y {
-  font-size: 8px; letter-spacing: .06em;
-  color: rgba(42,35,24,.42);
-  margin-top: 4px;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight: 300;
+  font-size: 8px; letter-spacing: .07em;
+  color: var(--ink-50); margin-top: 4px;
+  font-family: 'Noto Sans TC', sans-serif; font-weight: 300;
   white-space: nowrap;
 }
 
-/* ── FOUR CARDS ── */
+/* ════════════════════════════════
+   BODY — rail + cards
+════════════════════════════════ */
+.body { display: grid; grid-template-columns: 28px 1fr; }
+
+.rail {
+  border-right: .5px solid var(--ink-12);
+  background: var(--warm);
+  display: flex; flex-direction: column;
+  align-items: center; padding-top: 28px; gap: 10px;
+}
+.rail-t {
+  writing-mode: vertical-rl; font-size: 9px;
+  letter-spacing: .38em; color: var(--ink-50); font-weight: 300;
+}
+.rail-d { width: 2px; height: 2px; border-radius: 50%; background: var(--ink-30); }
+
+/* ── CARDS ── */
 .cards {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-top: 0.5px solid rgba(42,35,24,.1);
+  gap: 1.5px; background: var(--ink-12);
+  margin: 20px 40px 0 28px;
 }
 
 .card {
-  padding: 28px 28px 24px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  border-right: 0.5px solid rgba(42,35,24,.12);
+  background: var(--paper);
+  padding: 18px 16px 16px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
 }
-.card:last-child { border-right: none; }
-
-/* top accent line */
 .card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2.5px;
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2.5px;
 }
-.ca::before { background: #7a9e72; }
-.cb::before { background: #c4634a; }
-.cc::before { background: #c9a040; }
-.cd::before { background: #5c4f3a; }
+.ca::before { background: var(--sage); }
+.cb::before { background: var(--rust); }
+.cc::before { background: var(--gold); }
+.cd::before { background: var(--charcoal); }
 
-/* chapter number */
 .ch {
-  position: absolute;
-  top: 14px; right: 16px;
+  position: absolute; top: 11px; right: 12px;
   font-size: 9px; letter-spacing: .38em;
-  color: rgba(42,35,24,.2);
+  color: var(--ink-30);
   font-family: 'Noto Sans TC', sans-serif;
 }
 
-/* ── TREE ZONE ── */
+/* tree zone */
 .tz {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin-bottom: 18px;
+  display: flex; align-items: flex-end;
+  justify-content: center; margin-bottom: 12px;
 }
+.tz.h90  { height: 90px; }
+.tz.h110 { height: 110px; }
+.tz.h120 { height: 120px; }
+.tz.h125 { height: 125px; }
 
-/* ── CARD TEXT ── */
 .c-era {
-  font-size: 28px;
-  font-weight: 200;
-  letter-spacing: .1em;
-  color: #2a2318;
-  line-height: 1;
-  margin-bottom: 3px;
+  font-size: 22px; font-weight: 200;
+  letter-spacing: .1em; color: var(--ink);
+  display: block; line-height: 1; margin-bottom: 2px;
 }
 .c-range {
-  font-size: 8.5px;
-  letter-spacing: .32em;
-  color: rgba(42,35,24,.32);
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight: 300;
-  display: block;
-  margin-bottom: 10px;
+  font-size: 8px; letter-spacing: .32em;
+  color: var(--ink-50);
+  font-family: 'Noto Sans TC', sans-serif; font-weight: 300;
+  display: block; margin-bottom: 7px;
 }
 .c-sub {
-  font-size: 11.5px;
-  font-weight: 300;
-  letter-spacing: .14em;
-  color: rgba(42,35,24,.58);
-  margin-bottom: 12px;
-  line-height: 1.55;
+  font-size: 10.5px; font-weight: 400;
+  letter-spacing: .13em; color: var(--ink-70);
+  margin-bottom: 9px; line-height: 1.5;
 }
-.rule {
-  width: 20px; height: 0.5px;
-  background: rgba(42,35,24,.25);
-  margin-bottom: 13px;
-}
+.rule { width: 16px; height: .5px; background: var(--ink-30); margin-bottom: 9px; }
 
-/* ── EVENT LIST ── */
-.ev { list-style: none; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.ev li { display: flex; gap: 8px; align-items: flex-start; }
+.ev { list-style: none; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.ev li { display: flex; gap: 6px; align-items: flex-start; }
 .dt {
-  font-size: 9px;
-  letter-spacing: .06em;
-  color: rgba(42,35,24,.32);
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight: 300;
-  min-width: 44px;
-  flex-shrink: 0;
-  padding-top: 2px;
-  line-height: 1.5;
+  font-size: 9px; letter-spacing: .05em;
+  color: var(--ink-50);
+  font-family: 'Noto Sans TC', sans-serif; font-weight: 300;
+  min-width: 40px; flex-shrink: 0;
+  padding-top: 1.5px; line-height: 1.5;
 }
 .tx {
-  font-size: 10.5px;
-  line-height: 1.72;
-  color: rgba(42,35,24,.6);
-  font-weight: 300;
+  font-size: 10px; line-height: 1.68;
+  color: var(--ink-70); font-weight: 300;
   letter-spacing: .04em;
 }
 
 .sub-hd {
-  font-size: 8.5px;
-  letter-spacing: .26em;
-  color: #a07810;
-  border-left: 1.5px solid #c9a040;
-  padding-left: 6px;
-  margin: 10px 0 7px;
-  display: block;
-  font-weight: 400;
+  font-size: 8.5px; letter-spacing: .28em;
+  color: var(--gold); border-left: 1.5px solid var(--gold-l);
+  padding-left: 6px; margin: 9px 0 7px;
+  display: block; font-weight: 400;
 }
 
 .cq {
-  margin-top: auto;
-  padding-top: 12px;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: .14em;
-  color: rgba(42,35,24,.42);
+  margin-top: auto; padding-top: 10px;
+  font-size: 10px; font-weight: 300;
+  letter-spacing: .14em; color: var(--ink-50);
   font-style: italic;
-  border-top: 0.5px solid rgba(42,35,24,.1);
-  line-height: 1.7;
+  border-top: .5px solid var(--ink-12);
+  line-height: 1.6;
 }
 
-/* ── FOOTER QUOTE ── */
-.qt {
-  background: #2a2318;
-  padding: 18px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  border-top: 0.5px solid rgba(42,35,24,.3);
+/* ════════════════════════════════
+   ILLUSTRATION STRIP
+════════════════════════════════ */
+.illus-strip {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  padding: 12px 52px 0 56px;
+  height: 110px;
+  position: relative;
+  border-top: .5px solid var(--ink-12);
+  margin-top: 2px;
 }
-.qm { font-size: 24px; color: rgba(243,237,226,.12); font-weight: 200; line-height: 1; }
-.qt-t { font-size: 11px; letter-spacing: .26em; color: rgba(243,237,226,.52); font-weight: 300; font-style: italic; }
+
+/* ════════════════════════════════
+   QUOTE BAR
+════════════════════════════════ */
+.qt {
+  background: var(--charcoal);
+  padding: 14px 52px;
+  display: flex; align-items: center;
+  justify-content: center; gap: 14px;
+}
+.qm { font-size: 24px; color: rgba(243,237,224,.12); font-weight: 200; line-height: 1; }
+.qt-t {
+  font-size: 11px; letter-spacing: .26em;
+  color: rgba(243,237,224,.62); font-weight: 300; font-style: italic;
+}
 
 /* ── EDIT ── */
 [contenteditable] { outline: none; border-radius: 2px; transition: background .2s; cursor: text; }
-[contenteditable]:hover { background: rgba(160,120,16,.07); }
-[contenteditable]:focus { background: rgba(160,120,16,.13); box-shadow: 0 0 0 1.5px rgba(160,120,16,.28); }
+[contenteditable]:hover { background: rgba(155,112,16,.07); }
+[contenteditable]:focus { background: rgba(155,112,16,.13); box-shadow: 0 0 0 1.5px rgba(155,112,16,.3); }
 
 @media print {
   body { background: white; padding: 0; }
   .hint { display: none; }
   .page { box-shadow: none; }
   [contenteditable]:hover,[contenteditable]:focus { background: transparent !important; box-shadow: none !important; }
-  @page { size: A4 landscape; margin: 0; }
+  @page { size: A3 landscape; margin: 0; }
 }
 </style>
 </head>
 <body>
 
-<div class="hint">✦ 點擊任意文字即可直接編輯　·　Ctrl+P 儲存橫式 A4 PDF　✦</div>
+<div class="hint">✦ 點擊任意文字可直接編輯　·　Ctrl+P → 另存PDF（選 A3 橫向）　✦</div>
 
 <div class="page">
 
-<!-- ═══ HEADER ═══ -->
+<!-- ══ HEADER ══ -->
 <div class="hd">
-  <div class="hd-left">
-    <span class="hd-en" contenteditable>· JINYUAN ORIGIN ·</span>
-    <span class="hd-sub" contenteditable>荒地十六年　·　生根記</span>
+  <div class="logo-box">
+    <img src="/mnt/user-data/uploads/logo.jpg" alt="今園草堂">
   </div>
-  <div class="hd-center">
+  <div class="hd-c">
     <span class="hd-main" contenteditable>今 園 草 堂</span>
+    <span class="hd-sub" contenteditable>荒地十六年　·　生根記</span>
+    <span class="hd-en" contenteditable>· JINYUAN ORIGIN · A STORY OF ROOTS ·</span>
   </div>
-  <div class="hd-right">
+  <div class="hd-r">
     <span class="hd-num" contenteditable>16</span>
     <span class="hd-yl">YEARS</span>
-    <span class="hd-yr" contenteditable>民國 99 — 115</span>
+    <span class="hd-yr" contenteditable>民國 99—115</span>
   </div>
 </div>
 
-<!-- ═══ TIMELINE ═══ -->
+<!-- ══ TIMELINE ══ -->
 <div class="tl">
   <div class="tl-seg"></div>
   <div class="tl-n"><div class="tl-d big"></div><span class="tl-y">99</span></div>
@@ -337,269 +337,493 @@ body {
   <div class="tl-seg"></div>
   <div class="tl-n"><div class="tl-d"></div><span class="tl-y">111</span></div>
   <div class="tl-seg"></div>
-  <div class="tl-n"><div class="tl-d big"></div><span class="tl-y">114 — 115</span></div>
+  <div class="tl-n"><div class="tl-d big"></div><span class="tl-y">114—115</span></div>
   <div class="tl-seg"></div>
 </div>
 
-<!-- ═══ FOUR CARDS ═══ -->
+<!-- ══ BODY ══ -->
+<div class="body">
+<div class="rail">
+  <div class="rail-t">農耕志</div>
+  <div class="rail-d"></div><div class="rail-d"></div><div class="rail-d"></div>
+  <div class="rail-t">生根</div>
+  <div class="rail-d"></div><div class="rail-d"></div><div class="rail-d"></div>
+  <div class="rail-t">十六年</div>
+</div>
+
+<div style="padding: 0 6px;">
 <div class="cards">
 
-<!-- ── 壹：破土小苗 ── -->
+<!-- ══ 壹：剛破土的芽 ══ -->
 <div class="card ca">
   <span class="ch">壹</span>
-
-  <div class="tz" style="height:130px;">
-    <svg width="60" height="125" viewBox="0 0 60 125" fill="none">
-      <!-- 破土裂縫地面 -->
-      <path d="M8 112 Q15 108 30 110 Q45 108 52 112" stroke="#6b5a40" stroke-width="1" stroke-linecap="round" fill="none"/>
-      <path d="M22 110 Q26 106 30 110" stroke="#6b5a40" stroke-width=".8" stroke-linecap="round" fill="none"/>
-      <path d="M30 110 Q34 106 38 110" stroke="#6b5a40" stroke-width=".8" stroke-linecap="round" fill="none"/>
-      <!-- 土壤小碎塊 -->
-      <ellipse cx="18" cy="113" rx="4" ry="1.5" fill="#8b7050" fill-opacity=".3"/>
-      <ellipse cx="42" cy="113" rx="3.5" ry="1.5" fill="#8b7050" fill-opacity=".3"/>
-      <ellipse cx="30" cy="115" rx="5" ry="1.8" fill="#8b7050" fill-opacity=".22"/>
-      <!-- 嫩莖 — 細弱，剛破土 -->
-      <path d="M30 110 Q30 98 29 88 Q29 80 30 72" stroke="#5a7a4a" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-      <!-- 唯一兩片子葉 — 圓潤對稱 -->
-      <path d="M30 80 Q22 76 18 70 Q16 64 22 65 Q28 68 30 80Z" fill="#8db870" fill-opacity=".65" stroke="#5a7a4a" stroke-width=".8" fill-rule="evenodd"/>
-      <path d="M30 80 Q38 76 42 70 Q44 64 38 65 Q32 68 30 80Z" fill="#8db870" fill-opacity=".6" stroke="#5a7a4a" stroke-width=".8" fill-rule="evenodd"/>
-      <!-- 頂端嫩芽尖 -->
-      <path d="M30 72 Q29 65 28 58" stroke="#5a7a4a" stroke-width="1" stroke-linecap="round" fill="none"/>
-      <path d="M28 58 Q26 52 27 46 Q30 44 30 52 Q29 57 28 58Z" fill="#9dc878" fill-opacity=".7" stroke="#5a7a4a" stroke-width=".6"/>
-      <!-- 水珠露滴 -->
-      <ellipse cx="43" cy="70" rx="1.5" ry="2" fill="#a8c8e8" fill-opacity=".5"/>
-      <ellipse cx="18" cy="66" rx="1.2" ry="1.8" fill="#a8c8e8" fill-opacity=".4"/>
+  <div class="tz h90">
+    <!-- 剛破土的種子小苗 -->
+    <svg width="80" height="88" viewBox="0 0 80 88" fill="none">
+      <!-- 土堆 -->
+      <ellipse cx="40" cy="76" rx="28" ry="7" fill="#c4a96a" fill-opacity=".28"/>
+      <ellipse cx="40" cy="74" rx="20" ry="5" fill="#b89050" fill-opacity=".22"/>
+      <!-- 種子殼裂開 -->
+      <path d="M33 74 Q31 68 33 62 Q35 57 40 57 Q45 57 47 62 Q49 68 47 74Z" fill="#8a6830" fill-opacity=".35" stroke="#7a5820" stroke-width=".8"/>
+      <path d="M33 74 Q32 68 34 62" stroke="#7a5820" stroke-width=".6" stroke-linecap="round"/>
+      <path d="M47 74 Q48 68 46 62" stroke="#7a5820" stroke-width=".6" stroke-linecap="round"/>
+      <!-- 根鬚 -->
+      <path d="M38 74 Q34 78 28 80" stroke="#9a7840" stroke-width=".9" stroke-linecap="round"/>
+      <path d="M40 75 Q40 80 40 84" stroke="#9a7840" stroke-width=".9" stroke-linecap="round"/>
+      <path d="M42 74 Q46 78 52 80" stroke="#9a7840" stroke-width=".9" stroke-linecap="round"/>
+      <path d="M36 75 Q30 82 24 84" stroke="#9a7840" stroke-width=".7" stroke-linecap="round"/>
+      <path d="M44 75 Q50 82 56 83" stroke="#9a7840" stroke-width=".7" stroke-linecap="round"/>
+      <!-- 嫩莖 — 細直 -->
+      <path d="M40 57 Q39 47 39 38 Q39 28 40 18" stroke="#5a7848" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- 頂芽 — 只有兩片剛展開的子葉 -->
+      <path d="M39 18 Q33 12 28 10 Q24 8 26 14 Q30 16 36 18 Q38 18 39 18Z" fill="#7ab060" fill-opacity=".65" stroke="#4a7838" stroke-width=".7"/>
+      <path d="M39 18 Q45 12 50 10 Q54 8 52 14 Q48 16 42 18 Q40 18 39 18Z" fill="#7ab060" fill-opacity=".6" stroke="#4a7838" stroke-width=".7"/>
+      <!-- 莖頂小尖芽 -->
+      <path d="M39 18 Q39 12 40 8 Q41 4 42 8 Q41 12 39 18Z" fill="#6aa050" fill-opacity=".55" stroke="#4a7838" stroke-width=".5"/>
+      <!-- 土壤紋路 -->
+      <path d="M18 72 Q28 70 40 71 Q52 70 62 72" stroke="#b89050" stroke-width=".5" fill="none" stroke-opacity=".4"/>
     </svg>
   </div>
-
   <div class="c-era" contenteditable>歸零</div>
   <span class="c-range" contenteditable>壹　民國 99—102</span>
-  <div class="c-sub" contenteditable>農地購置前的學習與探索</div>
+  <div class="c-sub" contenteditable>農藝的學習與探索</div>
   <div class="rule"></div>
   <ul class="ev">
     <li><span class="dt" contenteditable>99.09</span><span class="tx" contenteditable>自邁司科技退休，開啟人生下半場</span></li>
     <li><span class="dt" contenteditable>100.03</span><span class="tx" contenteditable>進入三鶯社大無毒農耕班、麵包窯烘培班</span></li>
-    <li><span class="dt" contenteditable>100.05</span><span class="tx" contenteditable>三峽租地習農，以「北大農夫」撰寫農耕周記</span></li>
-    <li><span class="dt" contenteditable>100.09</span><span class="tx" contenteditable>擔任農耕班班長，同步學習創意木工</span></li>
-    <li><span class="dt" contenteditable>100.12</span><span class="tx" contenteditable>開始接觸樸門農藝</span></li>
-    <li><span class="dt" contenteditable>101.04</span><span class="tx" contenteditable>均優論壇擔任「社大志工公共參與」引言人</span></li>
-    <li><span class="dt" contenteditable>101.05</span><span class="tx" contenteditable>宜蘭全國社大論壇及南澳自然田參訪</span></li>
-    <li><span class="dt" contenteditable>101.10</span><span class="tx" contenteditable>完成啄木鳥志工培訓四周課程</span></li>
+    <li><span class="dt" contenteditable>100.05</span><span class="tx" contenteditable>三峽河旁租60坪農地習農，以「北大農夫」撰寫農耕周記</span></li>
+    <li><span class="dt" contenteditable>100.09</span><span class="tx" contenteditable>擔任無毒農耕班班長，同步學習創意木工</span></li>
+    <li><span class="dt" contenteditable>100.12</span><span class="tx" contenteditable>開始接觸學習樸門農藝</span></li>
+    <li><span class="dt" contenteditable>101.04</span><span class="tx" contenteditable>均優學習論壇擔任「社大志工的公共參與」引言人</span></li>
+    <li><span class="dt" contenteditable>101.05</span><span class="tx" contenteditable>參加宜蘭全國社大論壇及南澳自然田參訪</span></li>
+    <li><span class="dt" contenteditable>101.10</span><span class="tx" contenteditable>福田樹木保護基金會啄木鳥志工培訓四周課程</span></li>
     <li><span class="dt" contenteditable>102.08</span><span class="tx" contenteditable>考察 The One 南園人文客棧</span></li>
-    <li><span class="dt" contenteditable>102.09</span><span class="tx" contenteditable>同步修習五課程：良心農友社、釉藥、木工、木雕、手拉坏</span></li>
+    <li><span class="dt" contenteditable>102.09</span><span class="tx" contenteditable>同步修習五課程：良心農友社、釉藥班、創意木工、傳統木雕、手拉坏</span></li>
   </ul>
   <div class="cq" contenteditable>"科技人踏入土地的第一步"</div>
 </div>
 
-<!-- ── 貳：兩葉小苗 ── -->
+<!-- ══ 貳：兩葉小苗 ══ -->
 <div class="card cb">
   <span class="ch">貳</span>
-
-  <div class="tz" style="height:130px;">
-    <svg width="80" height="125" viewBox="0 0 80 125" fill="none">
-      <!-- 地面線 -->
-      <path d="M10 112 Q40 108 70 112" stroke="#6b5a40" stroke-width="1" stroke-linecap="round" fill="none"/>
-      <ellipse cx="25" cy="114" rx="5" ry="1.8" fill="#8b7050" fill-opacity=".25"/>
-      <ellipse cx="55" cy="114" rx="4" ry="1.6" fill="#8b7050" fill-opacity=".22"/>
-      <!-- 主莖 稍粗 -->
-      <path d="M40 112 Q39 96 38 82 Q37 68 40 54 Q41 46 40 36" stroke="#4a6a38" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      <!-- 第一對真葉 — 小，靠下 -->
-      <path d="M39 82 Q30 76 24 69 Q22 62 28 64 Q35 69 39 82Z" fill="#7db860" fill-opacity=".55" stroke="#4a6a38" stroke-width=".7"/>
-      <path d="M39 82 Q48 76 54 69 Q56 62 50 64 Q43 69 39 82Z" fill="#7db860" fill-opacity=".52" stroke="#4a6a38" stroke-width=".7"/>
-      <!-- 第二對葉 — 較大，靠上 -->
-      <path d="M39 56 Q26 48 18 38 Q15 30 23 33 Q33 40 39 56Z" fill="#8dc870" fill-opacity=".6" stroke="#4a6a38" stroke-width=".8"/>
-      <path d="M40 56 Q53 48 61 38 Q64 30 56 33 Q46 40 40 56Z" fill="#8dc870" fill-opacity=".57" stroke="#4a6a38" stroke-width=".8"/>
+  <div class="tz h110">
+    <!-- 兩片葉子的幼苗，莖細長 -->
+    <svg width="80" height="108" viewBox="0 0 80 108" fill="none">
+      <!-- 土 -->
+      <ellipse cx="40" cy="94" rx="26" ry="6" fill="#c4a96a" fill-opacity=".25"/>
+      <!-- 根 -->
+      <path d="M38 94 Q30 98 22 100" stroke="#9a7840" stroke-width="1" stroke-linecap="round"/>
+      <path d="M40 95 Q40 100 40 105" stroke="#9a7840" stroke-width="1" stroke-linecap="round"/>
+      <path d="M42 94 Q50 98 58 100" stroke="#9a7840" stroke-width="1" stroke-linecap="round"/>
+      <path d="M36 95 Q26 101 18 104" stroke="#9a7840" stroke-width=".7" stroke-linecap="round"/>
+      <path d="M44 95 Q54 101 62 104" stroke="#9a7840" stroke-width=".7" stroke-linecap="round"/>
+      <!-- 莖 -->
+      <path d="M40 94 Q40 80 40 65 Q40 50 40 35" stroke="#5a7848" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- 第一對葉 — 中段 -->
+      <path d="M40 60 Q28 54 18 52 Q12 50 14 57 Q20 60 30 60 Q36 60 40 60Z" fill="#82b468" fill-opacity=".6" stroke="#4a7838" stroke-width=".8"/>
+      <path d="M40 60 Q52 54 62 52 Q68 50 66 57 Q60 60 50 60 Q44 60 40 60Z" fill="#82b468" fill-opacity=".55" stroke="#4a7838" stroke-width=".8"/>
+      <!-- 第二對葉 — 頂部，更嫩 -->
+      <path d="M40 36 Q30 29 22 27 Q16 25 18 31 Q24 35 33 36 Q37 36 40 36Z" fill="#9aca7c" fill-opacity=".65" stroke="#4a7838" stroke-width=".7"/>
+      <path d="M40 36 Q50 29 58 27 Q64 25 62 31 Q56 35 47 36 Q43 36 40 36Z" fill="#9aca7c" fill-opacity=".6" stroke="#4a7838" stroke-width=".7"/>
       <!-- 頂芽 -->
-      <path d="M40 36 Q39 28 38 20" stroke="#4a6a38" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-      <path d="M38 20 Q36 13 37 7 Q40 5 40 13 Q39 18 38 20Z" fill="#9dd878" fill-opacity=".72" stroke="#4a6a38" stroke-width=".6"/>
-      <path d="M38 20 Q42 13 43 7 Q40 5 40 13 Q39 18 38 20Z" fill="#9dd878" fill-opacity=".65" stroke="#4a6a38" stroke-width=".6"/>
-      <!-- 葉脈細線 -->
-      <path d="M39 82 Q32 76 24 69" stroke="#4a6a38" stroke-width=".4" stroke-linecap="round" fill="none" opacity=".4"/>
-      <path d="M40 56 Q33 48 26 40" stroke="#4a6a38" stroke-width=".4" stroke-linecap="round" fill="none" opacity=".4"/>
+      <path d="M40 36 Q38 28 38 20 Q38 14 40 10 Q42 14 42 20 Q42 28 40 36Z" fill="#74a858" fill-opacity=".6" stroke="#4a7838" stroke-width=".6"/>
+      <!-- 葉脈 -->
+      <path d="M40 60 Q30 56 18 52" stroke="#4a7838" stroke-width=".4" stroke-opacity=".4"/>
+      <path d="M40 60 Q50 56 62 52" stroke="#4a7838" stroke-width=".4" stroke-opacity=".4"/>
+      <path d="M40 36 Q30 32 22 27" stroke="#4a7838" stroke-width=".4" stroke-opacity=".35"/>
+      <path d="M40 36 Q50 32 58 27" stroke="#4a7838" stroke-width=".4" stroke-opacity=".35"/>
     </svg>
   </div>
-
   <div class="c-era" contenteditable>考驗</div>
   <span class="c-range" contenteditable>貳　民國 103—106</span>
-  <div class="c-sub" contenteditable>農地購置到農舍申請的拔河</div>
+  <div class="c-sub" contenteditable>農地購置到農舍申請的歷程</div>
   <div class="rule"></div>
   <ul class="ev">
     <li><span class="dt" contenteditable>103.06</span><span class="tx" contenteditable>農地購置完成</span></li>
     <li><span class="dt" contenteditable>103.07</span><span class="tx" contenteditable>接收農地，認養花妞</span></li>
-    <li><span class="dt" contenteditable>103.12</span><span class="tx" contenteditable>種植蔬果喬木，開始每周三峽—大安往返</span></li>
-    <li><span class="dt" contenteditable>104.09</span><span class="tx" contenteditable>農業發展條例修訂，農舍審核從嚴</span></li>
+    <li><span class="dt" contenteditable>103.12</span><span class="tx" contenteditable>種植蔬菜、果樹、喬木，開始每周三峽—大安來回</span></li>
+    <li><span class="dt" contenteditable>104.09</span><span class="tx" contenteditable>農業發展條例細則修訂，農舍審核從嚴</span></li>
     <li><span class="dt" contenteditable>105.05</span><span class="tx" contenteditable>向台中市農業局提出農舍申請</span></li>
-    <li><span class="dt" contenteditable>105.11</span><span class="tx" contenteditable>農業局來函，要求補正</span></li>
+    <li><span class="dt" contenteditable>105.11</span><span class="tx" contenteditable>台中市農業局來函，要求補正</span></li>
     <li><span class="dt" contenteditable>106.02</span><span class="tx" contenteditable>完成經營計畫書補正</span></li>
   </ul>
   <div class="cq" contenteditable>"蓋一個家的代價，遠比想像中沉重"</div>
 </div>
 
-<!-- ── 參：成長樹苗 ── -->
+<!-- ══ 參：茁壯成長的樹苗 ══ -->
 <div class="card cc">
   <span class="ch">參</span>
-
-  <div class="tz" style="height:130px;">
-    <svg width="110" height="125" viewBox="0 0 110 125" fill="none">
-      <!-- 根系 visible -->
-      <path d="M55 118 Q44 120 34 125" stroke="#6b5040" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-      <path d="M55 118 Q65 120 75 124" stroke="#6b5040" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-      <path d="M48 120 Q40 124 32 122" stroke="#6b5040" stroke-width=".8" stroke-linecap="round" fill="none"/>
-      <path d="M62 120 Q70 124 78 122" stroke="#6b5040" stroke-width=".8" stroke-linecap="round" fill="none"/>
-      <!-- 地面 -->
-      <path d="M20 116 Q55 112 90 116" stroke="#6b5a40" stroke-width="1" stroke-linecap="round" fill="none" stroke-dasharray="3 4"/>
-      <!-- 主幹 較粗 -->
-      <path d="M55 116 Q53 98 51 80 Q50 64 54 48 Q56 36 54 22 Q53 12 55 4" stroke="#4a3a28" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-      <!-- 左大枝 -->
-      <path d="M52 86 Q38 76 24 72 Q14 70 8 76" stroke="#4a3a28" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      <path d="M24 72 Q16 62 10 56" stroke="#4a3a28" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-      <!-- 右大枝 -->
-      <path d="M55 74 Q68 64 82 61 Q92 59 98 64" stroke="#4a3a28" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      <path d="M82 61 Q90 52 96 46" stroke="#4a3a28" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-      <!-- 上枝 -->
-      <path d="M53 48 Q42 38 30 34" stroke="#4a3a28" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-      <path d="M55 38 Q65 28 76 25" stroke="#4a3a28" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-      <!-- 葉群 黃綠，茂盛 -->
-      <ellipse cx="8" cy="74" rx="8" ry="5.5" transform="rotate(-12 8 74)" fill="#b8c860" fill-opacity=".45" stroke="#6a8830" stroke-width=".6"/>
-      <ellipse cx="98" cy="62" rx="7.5" ry="5" transform="rotate(14 98 62)" fill="#b8c860" fill-opacity=".42" stroke="#6a8830" stroke-width=".6"/>
-      <ellipse cx="10" cy="54" rx="6" ry="4" transform="rotate(-20 10 54)" fill="#c8d870" fill-opacity=".4" stroke="#6a8830" stroke-width=".5"/>
-      <ellipse cx="96" cy="44" rx="5.5" ry="3.8" transform="rotate(22 96 44)" fill="#c8d870" fill-opacity=".38" stroke="#6a8830" stroke-width=".5"/>
-      <ellipse cx="30" cy="32" rx="6" ry="4" transform="rotate(-18 30 32)" fill="#b8c860" fill-opacity=".4" stroke="#6a8830" stroke-width=".5"/>
-      <ellipse cx="76" cy="23" rx="5.5" ry="3.5" transform="rotate(16 76 23)" fill="#b8c860" fill-opacity=".38" stroke="#6a8830" stroke-width=".5"/>
-      <ellipse cx="55" cy="2" rx="5" ry="4" fill="#c8d870" fill-opacity=".45" stroke="#6a8830" stroke-width=".5"/>
-      <!-- 地面草 -->
-      <path d="M32 115 Q33 110 35 115" stroke="#8a9a50" stroke-width=".8" stroke-linecap="round" fill="none"/>
-      <path d="M42 116 Q44 111 46 116" stroke="#8a9a50" stroke-width=".8" stroke-linecap="round" fill="none"/>
-      <path d="M64 115 Q66 110 68 115" stroke="#8a9a50" stroke-width=".8" stroke-linecap="round" fill="none"/>
-      <path d="M74 116 Q76 111 78 116" stroke="#8a9a50" stroke-width=".8" stroke-linecap="round" fill="none"/>
+  <div class="tz h120">
+    <!-- 成長茁壯的樹苗，有分枝和多層葉 -->
+    <svg width="96" height="118" viewBox="0 0 96 118" fill="none">
+      <!-- 土 -->
+      <ellipse cx="48" cy="106" rx="32" ry="7.5" fill="#c4a96a" fill-opacity=".28"/>
+      <!-- 根 -->
+      <path d="M45 105 Q34 110 22 113" stroke="#9a7840" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M48 107 Q48 112 48 116" stroke="#9a7840" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M51 105 Q62 110 74 113" stroke="#9a7840" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M43 106 Q28 112 16 115" stroke="#9a7840" stroke-width=".8" stroke-linecap="round"/>
+      <path d="M53 106 Q68 112 80 115" stroke="#9a7840" stroke-width=".8" stroke-linecap="round"/>
+      <!-- 主幹 — 更粗 -->
+      <path d="M48 106 Q47 90 46 74 Q45 58 48 44 Q50 34 48 20 Q47 11 49 4" stroke="#4a3a20" stroke-width="2.8" stroke-linecap="round"/>
+      <!-- 左枝一 -->
+      <path d="M46 80 Q35 72 24 69" stroke="#4a3a20" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M24 69 Q15 62 8 58" stroke="#4a3a20" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- 右枝一 -->
+      <path d="M48 68 Q58 61 70 58" stroke="#4a3a20" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M70 58 Q78 52 84 48" stroke="#4a3a20" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- 左枝二 -->
+      <path d="M47 50 Q37 41 26 37" stroke="#4a3a20" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- 右枝二 -->
+      <path d="M49 40 Q58 32 68 29" stroke="#4a3a20" stroke-width="1.4" stroke-linecap="round"/>
+      <!-- 葉群 — 金黃茂盛 -->
+      <ellipse cx="8" cy="56" rx="9" ry="6" transform="rotate(-12 8 56)" fill="#c8a035" fill-opacity=".38" stroke="#9a7010" stroke-width=".7"/>
+      <ellipse cx="84" cy="46" rx="8" ry="5.5" transform="rotate(14 84 46)" fill="#c8a035" fill-opacity=".35" stroke="#9a7010" stroke-width=".7"/>
+      <ellipse cx="26" cy="35" rx="7" ry="4.5" transform="rotate(-20 26 35)" fill="#c8a035" fill-opacity=".32" stroke="#9a7010" stroke-width=".6"/>
+      <ellipse cx="68" cy="27" rx="7" ry="4.5" transform="rotate(18 68 27)" fill="#c8a035" fill-opacity=".32" stroke="#9a7010" stroke-width=".6"/>
+      <ellipse cx="49" cy="2" rx="6.5" ry="5" fill="#c8a035" fill-opacity=".38" stroke="#9a7010" stroke-width=".6"/>
+      <!-- 地面小草 -->
+      <path d="M24 105 Q25 100 27 105" stroke="#8ab07e" stroke-width=".8" stroke-linecap="round"/>
+      <path d="M34 106 Q36 101 38 106" stroke="#8ab07e" stroke-width=".8" stroke-linecap="round"/>
+      <path d="M58 105 Q60 100 62 105" stroke="#8ab07e" stroke-width=".8" stroke-linecap="round"/>
+      <path d="M68 106 Q70 101 72 106" stroke="#8ab07e" stroke-width=".8" stroke-linecap="round"/>
     </svg>
   </div>
-
   <div class="c-era" contenteditable>紮根</div>
   <span class="c-range" contenteditable>參　民國 107—109</span>
-  <div class="c-sub" contenteditable>農舍落成的永續紀跡</div>
+  <div class="c-sub" contenteditable>農舍落成的永續生態</div>
   <div class="rule"></div>
   <ul class="ev">
-    <li><span class="dt" contenteditable>107.01</span><span class="tx" contenteditable>農舍建造執照核准（5 年有效）</span></li>
-    <li><span class="dt" contenteditable>107.02</span><span class="tx" contenteditable>認養小虎</span></li>
+    <li><span class="dt" contenteditable>107.01</span><span class="tx" contenteditable>農舍建造執照核准（5年有效），認養小虎</span></li>
     <li><span class="dt" contenteditable>108.元旦</span><span class="tx" contenteditable>草堂農舍正式動工</span></li>
-    <li><span class="dt" contenteditable>109.07</span><span class="tx" contenteditable>農舍完工，取得使用執照</span></li>
-    <li><span class="dt" contenteditable>109.09</span><span class="tx" contenteditable>太陽能與風車綠能系統啟動</span></li>
+    <li><span class="dt" contenteditable>109.07</span><span class="tx" contenteditable>農舍完工，使用執照取得</span></li>
+    <li><span class="dt" contenteditable>109.09</span><span class="tx" contenteditable>綠能（太陽能＋風車）開始運作</span></li>
     <li><span class="dt" contenteditable>109.10</span><span class="tx" contenteditable>中秋節開始試住</span></li>
-    <li><span class="dt" contenteditable>109.11</span><span class="tx" contenteditable>柴燒爐啟用，小黑進駐</span></li>
-    <li><span class="dt" contenteditable>109.12</span><span class="tx" contenteditable>入宅謝土，正式入住草堂</span></li>
+    <li><span class="dt" contenteditable>109.11</span><span class="tx" contenteditable>柴燒爐開始使用</span></li>
+    <li><span class="dt" contenteditable>109.12</span><span class="tx" contenteditable>小黑進駐；入宅謝土拜拜，正式入住草堂</span></li>
   </ul>
 </div>
 
-<!-- ── 肆：開花飄逸 ── -->
+<!-- ══ 肆：開花飄逸的大樹 ══ -->
 <div class="card cd">
   <span class="ch">肆</span>
-
-  <div class="tz" style="height:130px;">
-    <svg width="130" height="125" viewBox="0 0 130 125" fill="none">
-      <!-- 飄散花瓣 — 先畫，在樹後面 -->
-      <!-- 右上遠飄 -->
-      <ellipse cx="112" cy="18" rx="5" ry="3" transform="rotate(38 112 18)" fill="#e8a070" fill-opacity=".22"/>
-      <ellipse cx="122" cy="32" rx="4" ry="2.5" transform="rotate(-25 122 32)" fill="#d4806a" fill-opacity=".2"/>
-      <ellipse cx="118" cy="55" rx="4.5" ry="2.8" transform="rotate(52 118 55)" fill="#e8a070" fill-opacity=".18"/>
-      <!-- 左側飄 -->
-      <ellipse cx="12" cy="28" rx="4.5" ry="2.8" transform="rotate(-42 12 28)" fill="#d4806a" fill-opacity=".2"/>
-      <ellipse cx="6" cy="52" rx="4" ry="2.5" transform="rotate(35 6 52)" fill="#e8a070" fill-opacity=".18"/>
-      <ellipse cx="18" cy="70" rx="3.5" ry="2.2" transform="rotate(-28 18 70)" fill="#d4806a" fill-opacity=".16"/>
-      <!-- 中間低飄 -->
-      <ellipse cx="96" cy="88" rx="4" ry="2.5" transform="rotate(60 96 88)" fill="#c47858" fill-opacity=".18"/>
-      <ellipse cx="28" cy="95" rx="3.8" ry="2.3" transform="rotate(-48 28 95)" fill="#d4806a" fill-opacity=".15"/>
-      <!-- 根系 -->
-      <path d="M65 117 Q52 121 40 125" stroke="#5a4030" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-      <path d="M65 117 Q78 121 90 124" stroke="#5a4030" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-      <!-- 主幹 蜿蜒有風骨 -->
-      <path d="M65 118 Q63 100 61 82 Q59 64 63 48 Q66 36 63 22 Q61 12 65 3" stroke="#3a2c1c" stroke-width="3.2" stroke-linecap="round" fill="none"/>
-      <!-- 左主枝 — 向上伸展飄逸 -->
-      <path d="M61 82 Q46 70 30 66 Q18 63 10 70" stroke="#3a2c1c" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      <path d="M30 66 Q20 55 14 48" stroke="#3a2c1c" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-      <!-- 右主枝 -->
-      <path d="M64 68 Q78 57 92 54 Q103 51 110 58" stroke="#3a2c1c" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      <path d="M92 54 Q100 44 106 37" stroke="#3a2c1c" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-      <!-- 上細枝 輕盈 -->
-      <path d="M62 44 Q52 32 40 26" stroke="#3a2c1c" stroke-width="1.1" stroke-linecap="round" fill="none"/>
-      <path d="M64 34 Q74 22 86 18" stroke="#3a2c1c" stroke-width="1.1" stroke-linecap="round" fill="none"/>
-      <path d="M64 22 Q60 12 58 5" stroke="#3a2c1c" stroke-width="1" stroke-linecap="round" fill="none"/>
-      <path d="M65 16 Q70 8 76 4" stroke="#3a2c1c" stroke-width="1" stroke-linecap="round" fill="none"/>
-
-      <!-- 花朵 — 枝端盛開，每朵有五瓣 -->
-      <!-- 左端大花 -->
+  <div class="tz h125">
+    <!-- 開花飄逸，花瓣飄落 -->
+    <svg width="104" height="123" viewBox="0 0 104 123" fill="none">
+      <!-- 土 -->
+      <ellipse cx="52" cy="112" rx="34" ry="7" fill="#c4a96a" fill-opacity=".25"/>
+      <!-- 根 -->
+      <path d="M49 111 Q38 116 26 118" stroke="#9a7840" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M52 113 Q52 118 52 121" stroke="#9a7840" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M55 111 Q66 116 78 118" stroke="#9a7840" stroke-width="1.2" stroke-linecap="round"/>
+      <!-- 主幹 -->
+      <path d="M52 112 Q50 92 48 74 Q46 56 50 40 Q52 28 50 14 Q49 7 52 2" stroke="#3a2e1a" stroke-width="3.2" stroke-linecap="round"/>
+      <!-- 粗枝 -->
+      <path d="M48 88 Q34 77 20 74 Q10 72 5 78" stroke="#3a2e1a" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M51 74 Q65 63 80 60 Q90 58 96 64" stroke="#3a2e1a" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M49 56 Q38 44 26 40" stroke="#3a2e1a" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M51 44 Q62 33 74 30" stroke="#3a2e1a" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M50 26 Q44 16 38 12" stroke="#3a2e1a" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M52 18 Q58 9 66 6" stroke="#3a2e1a" stroke-width="1.3" stroke-linecap="round"/>
+      <!-- 花朵群 — 粉白 飄逸 -->
+      <!-- 左大枝花 -->
       <g opacity=".85">
-        <ellipse cx="10" cy="68" rx="5.5" ry="3.8" transform="rotate(-15 10 68)" fill="#f0b888" fill-opacity=".7" stroke="#c07848" stroke-width=".6"/>
-        <ellipse cx="5" cy="62" rx="3.5" ry="2.5" transform="rotate(-30 5 62)" fill="#f8d0a8" fill-opacity=".65" stroke="#c07848" stroke-width=".5"/>
-        <ellipse cx="15" cy="62" rx="3.5" ry="2.5" transform="rotate(20 15 62)" fill="#f8d0a8" fill-opacity=".65" stroke="#c07848" stroke-width=".5"/>
-        <ellipse cx="10" cy="58" rx="3.5" ry="2.5" fill="#f8d0a8" fill-opacity=".65" stroke="#c07848" stroke-width=".5"/>
-        <circle cx="10" cy="68" r="1.8" fill="#e09060" fill-opacity=".8"/>
+        <circle cx="5" cy="76" r="7" fill="white" fill-opacity=".7" stroke="#d4536a" stroke-width=".8"/>
+        <circle cx="-1" cy="70" r="4.5" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="11" cy="70" r="4.5" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="5" cy="66" r="4.5" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="-1" cy="82" r="4" fill="#fce8ec" fill-opacity=".7" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="11" cy="82" r="4" fill="#fce8ec" fill-opacity=".7" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="5" cy="76" r="2" fill="#f0a0b0" fill-opacity=".8"/>
       </g>
-      <!-- 右端花 -->
+      <!-- 右大枝花 -->
       <g opacity=".82">
-        <ellipse cx="110" cy="56" rx="5" ry="3.5" transform="rotate(12 110 56)" fill="#f0b888" fill-opacity=".68" stroke="#c07848" stroke-width=".6"/>
-        <ellipse cx="105" cy="50" rx="3.2" ry="2.2" transform="rotate(-25 105 50)" fill="#f8d0a8" fill-opacity=".62" stroke="#c07848" stroke-width=".5"/>
-        <ellipse cx="115" cy="50" rx="3.2" ry="2.2" transform="rotate(22 115 50)" fill="#f8d0a8" fill-opacity=".62" stroke="#c07848" stroke-width=".5"/>
-        <ellipse cx="110" cy="47" rx="3.2" ry="2.2" fill="#f8d0a8" fill-opacity=".62" stroke="#c07848" stroke-width=".5"/>
-        <circle cx="110" cy="56" r="1.6" fill="#e09060" fill-opacity=".8"/>
+        <circle cx="96" cy="62" r="6.5" fill="white" fill-opacity=".7" stroke="#d4536a" stroke-width=".8"/>
+        <circle cx="90" cy="56" r="4" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="102" cy="56" r="4" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="96" cy="53" r="4" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="90" cy="68" r="3.5" fill="#fce8ec" fill-opacity=".7" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="102" cy="68" r="3.5" fill="#fce8ec" fill-opacity=".7" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="96" cy="62" r="1.8" fill="#f0a0b0" fill-opacity=".8"/>
       </g>
-      <!-- 左上枝端花 -->
+      <!-- 上枝花苞 -->
       <g opacity=".78">
-        <ellipse cx="40" cy="24" rx="4.5" ry="3" transform="rotate(-20 40 24)" fill="#f0b888" fill-opacity=".65" stroke="#c07848" stroke-width=".5"/>
-        <ellipse cx="35" cy="19" rx="3" ry="2" transform="rotate(-30 35 19)" fill="#f8d0a8" fill-opacity=".6" stroke="#c07848" stroke-width=".4"/>
-        <ellipse cx="45" cy="19" rx="3" ry="2" transform="rotate(18 45 19)" fill="#f8d0a8" fill-opacity=".6" stroke="#c07848" stroke-width=".4"/>
-        <ellipse cx="40" cy="16" rx="3" ry="2" fill="#f8d0a8" fill-opacity=".6" stroke="#c07848" stroke-width=".4"/>
-        <circle cx="40" cy="24" r="1.4" fill="#e09060" fill-opacity=".75"/>
+        <circle cx="26" cy="38" r="5.5" fill="white" fill-opacity=".65" stroke="#d4536a" stroke-width=".7"/>
+        <circle cx="21" cy="33" r="3.5" fill="#fce8ec" fill-opacity=".75" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="31" cy="33" r="3.5" fill="#fce8ec" fill-opacity=".75" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="26" cy="30" r="3.5" fill="#fce8ec" fill-opacity=".75" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="26" cy="38" r="1.5" fill="#f0a0b0" fill-opacity=".7"/>
       </g>
-      <!-- 右上枝端花 -->
-      <g opacity=".78">
-        <ellipse cx="86" cy="16" rx="4.5" ry="3" transform="rotate(16 86 16)" fill="#f0b888" fill-opacity=".65" stroke="#c07848" stroke-width=".5"/>
-        <ellipse cx="81" cy="11" rx="3" ry="2" transform="rotate(-22 81 11)" fill="#f8d0a8" fill-opacity=".6" stroke="#c07848" stroke-width=".4"/>
-        <ellipse cx="91" cy="11" rx="3" ry="2" transform="rotate(25 91 11)" fill="#f8d0a8" fill-opacity=".6" stroke="#c07848" stroke-width=".4"/>
-        <ellipse cx="86" cy="8" rx="3" ry="2" fill="#f8d0a8" fill-opacity=".6" stroke="#c07848" stroke-width=".4"/>
-        <circle cx="86" cy="16" r="1.4" fill="#e09060" fill-opacity=".75"/>
+      <g opacity=".75">
+        <circle cx="74" cy="28" r="5" fill="white" fill-opacity=".65" stroke="#d4536a" stroke-width=".7"/>
+        <circle cx="69" cy="23" r="3.2" fill="#fce8ec" fill-opacity=".75" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="79" cy="23" r="3.2" fill="#fce8ec" fill-opacity=".75" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="74" cy="20" r="3.2" fill="#fce8ec" fill-opacity=".75" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="74" cy="28" r="1.4" fill="#f0a0b0" fill-opacity=".7"/>
       </g>
       <!-- 頂花 -->
-      <g opacity=".82">
-        <ellipse cx="65" cy="1" rx="4" ry="3" fill="#f0b888" fill-opacity=".7" stroke="#c07848" stroke-width=".5"/>
-        <ellipse cx="60" cy="-3" rx="2.8" ry="2" transform="rotate(-15 60 -3)" fill="#f8d0a8" fill-opacity=".65" stroke="#c07848" stroke-width=".4"/>
-        <ellipse cx="70" cy="-3" rx="2.8" ry="2" transform="rotate(15 70 -3)" fill="#f8d0a8" fill-opacity=".65" stroke="#c07848" stroke-width=".4"/>
-        <circle cx="65" cy="1" r="1.5" fill="#e09060" fill-opacity=".8"/>
+      <g opacity=".8">
+        <circle cx="52" cy="0" r="5.5" fill="white" fill-opacity=".7" stroke="#d4536a" stroke-width=".8"/>
+        <circle cx="47" cy="-5" r="3.5" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="57" cy="-5" r="3.5" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="52" cy="-8" r="3.5" fill="#fce8ec" fill-opacity=".8" stroke="#d4536a" stroke-width=".6"/>
+        <circle cx="52" cy="0" r="1.8" fill="#f0a0b0" fill-opacity=".8"/>
       </g>
-      <!-- 花苞 (未開) -->
-      <ellipse cx="58" cy="5" rx="2" ry="3" transform="rotate(-10 58 5)" fill="#e8a878" fill-opacity=".6" stroke="#c07848" stroke-width=".5"/>
-      <ellipse cx="76" cy="4" rx="1.8" ry="2.8" transform="rotate(12 76 4)" fill="#e8a878" fill-opacity=".55" stroke="#c07848" stroke-width=".5"/>
-      <!-- 地面 -->
-      <path d="M38 118 Q65 114 92 118" stroke="#6b5a40" stroke-width=".8" stroke-linecap="round" fill="none" stroke-dasharray="3 5"/>
+      <!-- 飄落花瓣 — 隨意散落 -->
+      <ellipse cx="18" cy="54" rx="4" ry="2.5" transform="rotate(-35 18 54)" fill="#fce8ec" fill-opacity=".7" stroke="#d4536a" stroke-width=".5"/>
+      <ellipse cx="82" cy="42" rx="3.5" ry="2.2" transform="rotate(42 82 42)" fill="#fce8ec" fill-opacity=".65" stroke="#d4536a" stroke-width=".5"/>
+      <ellipse cx="8" cy="98" rx="3.5" ry="2.2" transform="rotate(-50 8 98)" fill="#fce8ec" fill-opacity=".55" stroke="#d4536a" stroke-width=".4"/>
+      <ellipse cx="90" cy="88" rx="3" ry="2" transform="rotate(30 90 88)" fill="#fce8ec" fill-opacity=".5" stroke="#d4536a" stroke-width=".4"/>
+      <ellipse cx="36" cy="22" rx="3" ry="1.8" transform="rotate(-25 36 22)" fill="#fce8ec" fill-opacity=".6" stroke="#d4536a" stroke-width=".4"/>
+      <ellipse cx="68" cy="46" rx="2.8" ry="1.8" transform="rotate(55 68 46)" fill="#fce8ec" fill-opacity=".55" stroke="#d4536a" stroke-width=".4"/>
+      <ellipse cx="20" cy="102" rx="2.5" ry="1.6" transform="rotate(40 20 102)" fill="#fce8ec" fill-opacity=".45"/>
+      <ellipse cx="86" cy="104" rx="2.5" ry="1.5" transform="rotate(-30 86 104)" fill="#fce8ec" fill-opacity=".4"/>
+      <ellipse cx="60" cy="80" rx="2.2" ry="1.4" transform="rotate(65 60 80)" fill="#fce8ec" fill-opacity=".5"/>
+      <ellipse cx="42" cy="92" rx="2" ry="1.3" transform="rotate(-45 42 92)" fill="#fce8ec" fill-opacity=".45"/>
     </svg>
   </div>
-
   <div class="c-era" contenteditable>綻放</div>
   <span class="c-range" contenteditable>肆　民國 110—115</span>
   <div class="c-sub" contenteditable>共好草堂接地氣的真實生活</div>
   <div class="rule"></div>
-
   <span class="sub-hd" contenteditable>奠基與傳承　110—111 年</span>
   <ul class="ev">
-    <li><span class="dt" contenteditable>110.03</span><span class="tx" contenteditable>香草區、竹筍區完成；舉辦農友社年會農趴</span></li>
+    <li><span class="dt" contenteditable>110.03</span><span class="tx" contenteditable>香草區及竹筍區大致完成；良心農友社年會暨110首季農趴</span></li>
     <li><span class="dt" contenteditable>110.04</span><span class="tx" contenteditable>三峽花鳥班同學到訪</span></li>
     <li><span class="dt" contenteditable>110.10</span><span class="tx" contenteditable>火箭爐完工</span></li>
-    <li><span class="dt" contenteditable>111.11</span><span class="tx" contenteditable>擔任苗栗農改場有機班實習農場</span></li>
+    <li><span class="dt" contenteditable>111.11</span><span class="tx" contenteditable>擔任苗栗農改場有機初階班實習農場</span></li>
   </ul>
   <span class="sub-hd" contenteditable>注入活力與開放　114—115 年</span>
   <ul class="ev">
-    <li><span class="dt" contenteditable>114.03</span><span class="tx" contenteditable>宜蘭大學女校排兩梯次來草堂友誼賽</span></li>
-    <li><span class="dt" contenteditable>114.08</span><span class="tx" contenteditable>新成員：羊過與羊貴妃正式入堂</span></li>
-    <li><span class="dt" contenteditable>115</span><span class="tx" contenteditable>開放民眾體驗永續農業真實生活</span></li>
+    <li><span class="dt" contenteditable>114.03</span><span class="tx" contenteditable>宜蘭大學女校排兩梯次至草堂友誼賽</span></li>
+    <li><span class="dt" contenteditable>114.08</span><span class="tx" contenteditable>新進成員：羊過（8月大）與羊貴妃（4月大）</span></li>
+    <li><span class="dt" contenteditable>115</span><span class="tx" contenteditable>開放民眾體驗永續農業的真實生活</span></li>
   </ul>
 </div>
 
 </div><!-- /cards -->
 
-<!-- FOOTER -->
+<!-- ══ ILLUSTRATION STRIP ══ -->
+<div class="illus-strip">
+
+  <!-- 左：紅磚農舍 -->
+  <svg width="180" height="100" viewBox="0 0 180 100" fill="none" style="flex-shrink:0;">
+    <!-- 背景遠山 -->
+    <path d="M0 65 Q30 40 60 50 Q90 38 120 55 Q150 42 180 58 L180 100 L0 100Z" fill="#d4e8c8" fill-opacity=".35"/>
+    <!-- 稻田格 -->
+    <rect x="0" y="55" width="40" height="45" fill="#e8d870" fill-opacity=".28" rx="1"/>
+    <rect x="42" y="60" width="35" height="40" fill="#e8d870" fill-opacity=".22" rx="1"/>
+    <line x1="10" y1="55" x2="10" y2="100" stroke="#c8b840" stroke-width=".4" stroke-opacity=".3"/>
+    <line x1="20" y1="55" x2="20" y2="100" stroke="#c8b840" stroke-width=".4" stroke-opacity=".3"/>
+    <line x1="30" y1="55" x2="30" y2="100" stroke="#c8b840" stroke-width=".4" stroke-opacity=".3"/>
+    <!-- 農舍主體 -->
+    <rect x="78" y="45" width="70" height="48" fill="#e8d4b8" stroke="#b8a080" stroke-width=".8"/>
+    <!-- 磚紋 -->
+    <line x1="78" y1="54" x2="148" y2="54" stroke="#c8a870" stroke-width=".5" stroke-opacity=".5"/>
+    <line x1="78" y1="63" x2="148" y2="63" stroke="#c8a870" stroke-width=".5" stroke-opacity=".5"/>
+    <line x1="78" y1="72" x2="148" y2="72" stroke="#c8a870" stroke-width=".5" stroke-opacity=".5"/>
+    <line x1="78" y1="81" x2="148" y2="81" stroke="#c8a870" stroke-width=".5" stroke-opacity=".5"/>
+    <line x1="91" y1="45" x2="91" y2="93" stroke="#c8a870" stroke-width=".4" stroke-opacity=".35"/>
+    <line x1="104" y1="45" x2="104" y2="93" stroke="#c8a870" stroke-width=".4" stroke-opacity=".35"/>
+    <line x1="117" y1="45" x2="117" y2="93" stroke="#c8a870" stroke-width=".4" stroke-opacity=".35"/>
+    <line x1="130" y1="45" x2="130" y2="93" stroke="#c8a870" stroke-width=".4" stroke-opacity=".35"/>
+    <!-- 屋頂平台 -->
+    <rect x="74" y="38" width="78" height="10" fill="#c8baa0" stroke="#a89070" stroke-width=".8"/>
+    <!-- 風車 -->
+    <line x1="120" y1="38" x2="120" y2="18" stroke="#8a8080" stroke-width="1"/>
+    <path d="M120 22 L114 15 L120 24Z" fill="#a8a0a0" fill-opacity=".7"/>
+    <path d="M120 22 L126 15 L120 24Z" fill="#a8a0a0" fill-opacity=".6"/>
+    <path d="M120 24 L113 28 L120 22Z" fill="#a8a0a0" fill-opacity=".65"/>
+    <path d="M120 24 L127 28 L120 22Z" fill="#a8a0a0" fill-opacity=".6"/>
+    <circle cx="120" cy="23" r="2" fill="#808080"/>
+    <!-- 大樹 -->
+    <path d="M64 93 Q63 80 62 68" stroke="#5a4828" stroke-width="2" stroke-linecap="round"/>
+    <path d="M62 80 Q54 74 46 72" stroke="#5a4828" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M63 72 Q70 66 76 64" stroke="#5a4828" stroke-width="1.3" stroke-linecap="round"/>
+    <ellipse cx="46" cy="70" rx="9" ry="6" fill="#6a9050" fill-opacity=".55"/>
+    <ellipse cx="76" cy="62" rx="8" ry="5.5" fill="#6a9050" fill-opacity=".5"/>
+    <ellipse cx="62" cy="60" rx="10" ry="7" fill="#7aaa5e" fill-opacity=".55"/>
+    <!-- 窗 -->
+    <rect x="86" y="52" width="14" height="12" fill="#b8d8e8" fill-opacity=".6" stroke="#8898a8" stroke-width=".6"/>
+    <line x1="93" y1="52" x2="93" y2="64" stroke="#8898a8" stroke-width=".4"/>
+    <line x1="86" y1="58" x2="100" y2="58" stroke="#8898a8" stroke-width=".4"/>
+    <rect x="110" y="52" width="14" height="12" fill="#b8d8e8" fill-opacity=".6" stroke="#8898a8" stroke-width=".6"/>
+    <line x1="117" y1="52" x2="117" y2="64" stroke="#8898a8" stroke-width=".4"/>
+    <line x1="110" y1="58" x2="124" y2="58" stroke="#8898a8" stroke-width=".4"/>
+    <!-- 門 -->
+    <rect x="100" y="72" width="18" height="21" fill="#9a7850" fill-opacity=".6" stroke="#7a5830" stroke-width=".7" rx="1"/>
+    <circle cx="116" cy="83" r="1.2" fill="#c8a060"/>
+    <!-- 小溫室 -->
+    <path d="M152 93 L152 72 Q162 68 172 72 L172 93Z" fill="#d8e8f0" fill-opacity=".45" stroke="#90a8b8" stroke-width=".7"/>
+    <path d="M152 72 Q162 64 172 72" fill="none" stroke="#90a8b8" stroke-width=".7"/>
+    <!-- 菜圃 -->
+    <rect x="78" y="94" width="12" height="6" fill="#8ab460" fill-opacity=".4" rx=".5"/>
+    <rect x="92" y="94" width="12" height="6" fill="#8ab460" fill-opacity=".35" rx=".5"/>
+    <!-- 地面草 -->
+    <path d="M0 94 Q90 90 180 94 L180 100 L0 100Z" fill="#8ab460" fill-opacity=".3"/>
+    <!-- 小溪 -->
+    <path d="M155 100 Q162 95 170 98 Q175 100 180 99" stroke="#7ab8d8" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <!-- 中：大樹下農家生活 -->
+  <svg width="260" height="100" viewBox="0 0 260 100" fill="none" style="flex-shrink:0;">
+    <!-- 大樹幹 -->
+    <path d="M130 100 Q128 80 126 62 Q124 44 128 28 Q130 18 128 8" stroke="#4a3818" stroke-width="5" stroke-linecap="round"/>
+    <!-- 樹枝 -->
+    <path d="M126 60 Q110 50 94 46" stroke="#4a3818" stroke-width="3" stroke-linecap="round"/>
+    <path d="M94 46 Q80 40 70 36" stroke="#4a3818" stroke-width="2" stroke-linecap="round"/>
+    <path d="M128 48 Q142 38 158 34" stroke="#4a3818" stroke-width="3" stroke-linecap="round"/>
+    <path d="M158 34 Q170 28 180 24" stroke="#4a3818" stroke-width="2" stroke-linecap="round"/>
+    <path d="M127 32 Q116 22 104 18" stroke="#4a3818" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M129 22 Q138 12 150 8" stroke="#4a3818" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- 樹葉冠 -->
+    <ellipse cx="70" cy="34" rx="16" ry="11" fill="#6a9a50" fill-opacity=".65"/>
+    <ellipse cx="94" cy="38" rx="18" ry="12" fill="#78ae5c" fill-opacity=".6"/>
+    <ellipse cx="180" cy="22" rx="15" ry="10" fill="#6a9a50" fill-opacity=".6"/>
+    <ellipse cx="158" cy="28" rx="17" ry="11" fill="#78ae5c" fill-opacity=".58"/>
+    <ellipse cx="104" cy="15" rx="14" ry="9" fill="#7ab860" fill-opacity=".6"/>
+    <ellipse cx="150" cy="6" rx="13" ry="8.5" fill="#7ab860" fill-opacity=".55"/>
+    <ellipse cx="128" cy="4" rx="15" ry="10" fill="#88c46a" fill-opacity=".62"/>
+    <!-- 地面草皮 -->
+    <path d="M40 94 Q130 90 220 94 L220 100 L40 100Z" fill="#8ab460" fill-opacity=".35"/>
+    <!-- 樹蔭陰影 -->
+    <ellipse cx="130" cy="97" rx="55" ry="4" fill="#4a3818" fill-opacity=".08"/>
+
+    <!-- 農夫種菜 (左側) -->
+    <!-- 身體 -->
+    <rect x="52" y="68" width="10" height="18" fill="#5a7ab0" fill-opacity=".85" rx="2"/>
+    <!-- 頭 -->
+    <circle cx="57" cy="64" r="7" fill="#e8c89a"/>
+    <!-- 斗笠 -->
+    <path d="M49 64 Q57 56 65 64 Q61 65 57 65 Q53 65 49 64Z" fill="#c8a840" fill-opacity=".85"/>
+    <line x1="49" y1="64" x2="65" y2="64" stroke="#a88820" stroke-width=".7"/>
+    <!-- 手臂 — 彎腰種菜 -->
+    <path d="M52 72 Q44 76 40 82" stroke="#e8c89a" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M62 72 Q68 75 70 80" stroke="#e8c89a" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- 腿 -->
+    <path d="M55 86 Q53 92 52 98" stroke="#3a4a70" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M59 86 Q61 92 62 98" stroke="#3a4a70" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- 鋤頭 -->
+    <line x1="40" y1="82" x2="36" y2="96" stroke="#8a6830" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M33 94 Q36 90 42 92 Q38 96 33 94Z" fill="#8a6830" fill-opacity=".8"/>
+    <!-- 菜圃 -->
+    <rect x="36" y="93" width="24" height="5" fill="#8ab060" fill-opacity=".5" rx="1"/>
+    <path d="M40 93 Q41 89 42 93" stroke="#5a8040" stroke-width=".8" stroke-linecap="round"/>
+    <path d="M46 93 Q47 88 48 93" stroke="#5a8040" stroke-width=".8" stroke-linecap="round"/>
+    <path d="M52 93 Q53 90 54 93" stroke="#5a8040" stroke-width=".8" stroke-linecap="round"/>
+
+    <!-- 農婦泡茶 (右側，樹下) -->
+    <!-- 坐姿身體 -->
+    <rect x="168" y="74" width="10" height="14" fill="#d08060" fill-opacity=".85" rx="2"/>
+    <!-- 頭 -->
+    <circle cx="173" cy="70" r="6.5" fill="#e8c89a"/>
+    <!-- 髮髻 -->
+    <path d="M169 66 Q173 62 177 66 Q175 64 173 64 Q171 64 169 66Z" fill="#4a3018"/>
+    <!-- 手臂泡茶 -->
+    <path d="M168 77 Q162 76 158 78" stroke="#e8c89a" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M178 77 Q184 76 186 79" stroke="#e8c89a" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- 茶壺 -->
+    <rect x="154" y="74" width="9" height="7" fill="#8a6040" fill-opacity=".8" rx="1.5"/>
+    <path d="M163" y1="77" x1="163" x2="166" y2="77" stroke="#6a4020" stroke-width="1" stroke-linecap="round"/>
+    <line x1="157" y1="74" x2="157" y2="70" stroke="#6a4020" stroke-width="1" stroke-linecap="round"/>
+    <!-- 茶杯 -->
+    <rect x="183" y="76" width="6" height="5" fill="#c8a870" fill-opacity=".7" rx="1"/>
+    <!-- 小桌 -->
+    <rect x="152" y="81" width="40" height="3" fill="#c8a060" fill-opacity=".6" rx="1"/>
+    <line x1="155" y1="84" x2="155" y2="94" stroke="#a88040" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="189" y1="84" x2="189" y2="94" stroke="#a88040" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- 腿 (坐姿) -->
+    <path d="M170 88 Q168 92 166 98" stroke="#a06040" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M176 88 Q178 92 180 98" stroke="#a06040" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- 蒸汽 -->
+    <path d="M157 70 Q158 66 157 62" stroke="#c8d8e8" stroke-width=".8" fill="none" stroke-opacity=".5" stroke-linecap="round"/>
+    <path d="M160 70 Q161 65 160 61" stroke="#c8d8e8" stroke-width=".8" fill="none" stroke-opacity=".4" stroke-linecap="round"/>
+
+    <!-- 三隻狗 -->
+    <!-- 狗1 (躺著的) -->
+    <ellipse cx="90" cy="95" rx="10" ry="5" fill="#c8a060" fill-opacity=".75"/>
+    <circle cx="100" cy="92" r="5" fill="#c8a060" fill-opacity=".75"/>
+    <path d="M100 90 L103 84" stroke="#c8a060" stroke-width="1.5" stroke-linecap="round"/><!-- 耳 -->
+    <path d="M97 87 L94 82" stroke="#c8a060" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="102" cy="91" r="1.2" fill="#4a3018"/><!-- 眼 -->
+    <path d="M100 95 Q106 96 110 94" stroke="#c8a060" stroke-width="1.5" stroke-linecap="round"/><!-- 尾 -->
+
+    <!-- 狗2 (坐著的) -->
+    <ellipse cx="148" cy="96" rx="6" ry="4" fill="#8a6840" fill-opacity=".8"/>
+    <circle cx="148" cy="90" r="5.5" fill="#8a6840" fill-opacity=".8"/>
+    <path d="M145 87 L142 83" stroke="#8a6840" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M151 87 L154 83" stroke="#8a6840" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="146" cy="89" r="1" fill="#2a1808"/>
+    <circle cx="150" cy="89" r="1" fill="#2a1808"/>
+    <path d="M147 92 Q148 93 149 92" stroke="#6a4818" stroke-width=".8" stroke-linecap="round"/><!-- 笑 -->
+    <path d="M154" y1="94" x1="154" x2="160" y2="92" stroke="#8a6840" stroke-width="1.5" stroke-linecap="round"/><!-- 尾 -->
+
+    <!-- 狗3 (跑步的小狗) -->
+    <ellipse cx="208" cy="94" rx="7" ry="4" fill="#d4b080" fill-opacity=".8" transform="rotate(-15 208 94)"/>
+    <circle cx="214" cy="90" r="4.5" fill="#d4b080" fill-opacity=".8"/>
+    <path d="M212 87 L210 83" stroke="#d4b080" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M216 87 L219 83" stroke="#d4b080" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="215" cy="89" r="1" fill="#2a1808"/>
+    <!-- 跑步的腳 -->
+    <path d="M204 95 Q202 99 200 100" stroke="#d4b080" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M206 96 Q204 100 202 100" stroke="#d4b080" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M210 96 Q212 100 214 100" stroke="#d4b080" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M212 95 Q214 99 216 100" stroke="#d4b080" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- 尾巴 翹起 -->
+    <path d="M208 91 Q204 86 206 82" stroke="#d4b080" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  </svg>
+
+  <!-- 右：水墨小景 / 稻穗 -->
+  <svg width="120" height="100" viewBox="0 0 120 100" fill="none" style="flex-shrink:0; opacity:.8;">
+    <!-- 稻穗 -->
+    <path d="M30 100 Q29 85 28 70 Q27 55 30 40" stroke="#8a7030" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M50 100 Q49 82 48 66 Q47 50 50 36" stroke="#8a7030" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M70 100 Q69 84 68 68 Q67 52 70 38" stroke="#8a7030" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M90 100 Q89 86 88 70 Q87 54 90 40" stroke="#8a7030" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- 稻穗粒 -->
+    <g fill="#c8a840" fill-opacity=".7">
+      <ellipse cx="28" cy="42" rx="4" ry="2" transform="rotate(-20 28 42)"/>
+      <ellipse cx="25" cy="47" rx="3.5" ry="2" transform="rotate(-25 25 47)"/>
+      <ellipse cx="31" cy="46" rx="3.5" ry="2" transform="rotate(-15 31 46)"/>
+      <ellipse cx="26" cy="52" rx="3.5" ry="1.8" transform="rotate(-22 26 52)"/>
+      <ellipse cx="32" cy="51" rx="3.5" ry="1.8" transform="rotate(-18 32 51)"/>
+      <ellipse cx="27" cy="57" rx="3" ry="1.6" transform="rotate(-20 27 57)"/>
+      <ellipse cx="33" cy="56" rx="3" ry="1.6" transform="rotate(-16 33 56)"/>
+
+      <ellipse cx="48" cy="38" rx="4" ry="2" transform="rotate(-20 48 38)"/>
+      <ellipse cx="45" cy="43" rx="3.5" ry="2" transform="rotate(-25 45 43)"/>
+      <ellipse cx="51" cy="42" rx="3.5" ry="2" transform="rotate(-15 51 42)"/>
+      <ellipse cx="46" cy="48" rx="3.5" ry="1.8" transform="rotate(-22 46 48)"/>
+      <ellipse cx="52" cy="47" rx="3.5" ry="1.8" transform="rotate(-18 52 47)"/>
+      <ellipse cx="47" cy="53" rx="3" ry="1.6" transform="rotate(-20 47 53)"/>
+
+      <ellipse cx="68" cy="40" rx="4" ry="2" transform="rotate(-20 68 40)"/>
+      <ellipse cx="65" cy="45" rx="3.5" ry="2" transform="rotate(-25 65 45)"/>
+      <ellipse cx="71" cy="44" rx="3.5" ry="2" transform="rotate(-15 71 44)"/>
+      <ellipse cx="66" cy="50" rx="3.5" ry="1.8" transform="rotate(-22 66 50)"/>
+      <ellipse cx="72" cy="49" rx="3.5" ry="1.8" transform="rotate(-18 72 49)"/>
+
+      <ellipse cx="88" cy="42" rx="4" ry="2" transform="rotate(-20 88 42)"/>
+      <ellipse cx="85" cy="47" rx="3.5" ry="2" transform="rotate(-25 85 47)"/>
+      <ellipse cx="91" cy="46" rx="3.5" ry="2" transform="rotate(-15 91 46)"/>
+      <ellipse cx="86" cy="52" rx="3.5" ry="1.8" transform="rotate(-22 86 52)"/>
+      <ellipse cx="92" cy="51" rx="3.5" ry="1.8" transform="rotate(-18 92 51)"/>
+    </g>
+    <!-- 地面 -->
+    <path d="M10 98 Q60 95 110 98" stroke="#8a9a60" stroke-width=".6" stroke-opacity=".5"/>
+    <!-- 小鳥 -->
+    <path d="M100 30 Q104 26 108 30" stroke="#4a3818" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M112 25 Q116 21 120 25" stroke="#4a3818" stroke-width="1" fill="none" stroke-linecap="round"/>
+  </svg>
+
+</div><!-- /illus-strip -->
+</div>
+</div><!-- /body -->
+
+<!-- QUOTE -->
 <div class="qt">
   <span class="qm">"</span>
-  <span class="qt-t" contenteditable>蓋一個家的代價，遠比想像中沉重　──　今園草堂</span>
+  <span class="qt-t" contenteditable>蓋一個家的代價，遠比想像中沉重　──　今園草堂　Est. 2016</span>
   <span class="qm">"</span>
 </div>
 
