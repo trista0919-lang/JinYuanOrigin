@@ -10,22 +10,20 @@
 body {
   background: #bdb8ae;
   font-family: 'Noto Serif TC', 'PingFang TC', serif;
-  padding: 20px 10px; /* 減少邊距，適合行動裝置 */
+  padding: 20px 10px;
 }
 
-/* ── 修改 PAGE 容器：取消 A4 限制，改為響應式寬度 ── */
 .page {
   width: 95%;
-  max-width: 1400px; /* 最大寬度限制，避免大螢幕太散 */
+  max-width: 1400px; 
   margin: 0 auto;
   background: #f3ede2;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* 至少佔滿一屏 */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 增加一點陰影質感 */
+  min-height: 100vh; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* ── 修改 HEADER：在窄螢幕下改為垂直排列 ── */
 .hd {
   padding: 40px 5% 30px;
   display: grid;
@@ -44,18 +42,15 @@ body {
   .hd-right { order: 3; }
 }
 
-/* ── 修改 TIMELINE：使其可以橫向滾動或隱藏（若內容太多） ── */
 .tl {
   padding: 20px 5%;
-  overflow-x: auto; /* 讓時間軸在小螢幕可以左右滑動 */
+  overflow-x: auto;
   white-space: nowrap;
 }
-
-/* ── 修改 CARDS：核心變動 ── */
 .cards {
   flex: 1;
   display: grid;
-  /* 使用 auto-fit：寬度足夠時排 4 欄，不足時自動折行 */
+
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 0;
   border-top: 0.5px solid rgba(42,35,24,.1);
@@ -64,10 +59,9 @@ body {
 .card {
   padding: 40px 30px;
   border-right: 0.5px solid rgba(42,35,24,.12);
-  border-bottom: 0.5px solid rgba(42,35,24,.12); /* 增加底線，換行時才有區隔 */
+  border-bottom: 0.5px solid rgba(42,35,24,.12);
 }
 
-/* 針對行動裝置的細節微調 */
 @media (max-width: 600px) {
   .card {
     border-right: none;
@@ -76,12 +70,10 @@ body {
   .c-era { font-size: 24px; }
 }
 
-/* ── 移除原本 A4 列印限制的強制寬度 ── */
 @media print {
   .page { width: 100%; box-shadow: none; }
 }
 
-/* ... 保留其餘動畫、SVG 與文字樣式 ... */
 </style>
 /* ── PAGE: landscape A4 297×210mm ── */
 .page {
